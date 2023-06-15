@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'muaythai_db',
         'USER': 'muaythai_admin',
         'PASSWORD': 'mypassword',
-        'HOST': '0.0.0.0',
+        'HOST': '172.17.0.2',
         'PORT': '5432',
     }
 }
