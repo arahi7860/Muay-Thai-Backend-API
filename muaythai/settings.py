@@ -1,21 +1,13 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%%s3@elt%hj=-oj^hteyv61mnik14za_i!nmwle0=8%2&s-s@d'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,6 +50,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'muaythai.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'muaythai_db',
+        'USER': 'muaythai_admin',
+        'PASSWORD': 'mypassword',
+        'HOST': 'containers-us-west-45.railway.app',
+        'PORT': '6486',
+    }
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -73,17 +76,6 @@ WSGI_APPLICATION = 'muaythai.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'muaythai_db',
-        'USER': 'muaythai_admin',
-        'PASSWORD': 'mypassword',
-        'HOST': 'containers-us-west-45.railway.app',
-        'PORT': '6486',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -94,6 +86,8 @@ DATABASES = {
 #         'PORT': os.getenv('RAILWAY_DATABASE_PORT'),
 #     }
 # }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -124,18 +118,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
