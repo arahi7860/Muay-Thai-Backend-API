@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'muaythai_db',
         'USER': 'muaythai_admin',
         'PASSWORD': 'mypassword',
-        'HOST': 'django-intro',  # or use the IP address of the host machine
+        'HOST': '0.0.0.0',
         'PORT': '5432',
     }
 }
