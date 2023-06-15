@@ -76,13 +76,24 @@ WSGI_APPLICATION = 'muaythai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('RAILWAY_DATABASE_NAME'),
-        'USER': os.getenv('RAILWAY_DATABASE_USER'),
-        'PASSWORD': os.getenv('RAILWAY_DATABASE_PASSWORD'),
-        'HOST': os.getenv('RAILWAY_DATABASE_HOST'),
-        'PORT': os.getenv('RAILWAY_DATABASE_PORT'),
+        'NAME': 'muaythai_db',
+        'USER': 'muaythai_admin',
+        'PASSWORD': 'mypassword',
+        'HOST': 'django-intro',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('RAILWAY_DATABASE_NAME'),
+#         'USER': os.getenv('RAILWAY_DATABASE_USER'),
+#         'PASSWORD': os.getenv('RAILWAY_DATABASE_PASSWORD'),
+#         'HOST': os.getenv('RAILWAY_DATABASE_HOST'),
+#         'PORT': os.getenv('RAILWAY_DATABASE_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
