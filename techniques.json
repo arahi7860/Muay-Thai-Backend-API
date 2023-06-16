@@ -167,6 +167,11 @@
                     "name": "Mat Wiang Yao",
                     "description": "Haymaker Punch",
                     "img": "https://media.tenor.com/wt702WH7ImQAAAAd/haymaker-big-hit.gif"
+                },
+                {
+                    "name": "Spinning Back Fist",
+                    "description": "A striking technique where the practitioner rotates the body and delivers a powerful back fist strike.",
+                    "img": "https://example.com/spinning-back-fist.png"
                 }
             ]
         },
