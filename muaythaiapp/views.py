@@ -9,6 +9,7 @@ from rest_framework.decorators import action
 from django.http import JsonResponse
 from django.db.models import ProtectedError
 from .update_drill import update_drills_with_ids
+from django.conf import settings
 
 class TechniqueViewSet(viewsets.ModelViewSet):
     queryset = Technique.objects.all()
@@ -16,6 +17,9 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         technique_data = request.data
+
+        # Print the technique_data variable to inspect its contents
+        print("technique_data:", technique_data)
 
         category_name = technique_data.get('category')
 
@@ -37,8 +41,10 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         technique_instance = serializer.save()
 
         # Update the JSON file with the new technique data
+        json_file_path = os.path.join(settings.BASE_DIR, 'techniques.json')
+
         try:
-            with open('techniques.json', 'r') as f:
+            with open(json_file_path, 'r') as f:
                 data = json.load(f)
 
             categories = data.get('categories', [])
@@ -55,7 +61,7 @@ class TechniqueViewSet(viewsets.ModelViewSet):
                 })
 
                 # Update the JSON file with the modified data
-                with open('techniques.json', 'w') as f:
+                with open(json_file_path, 'w') as f:
                     json.dump(data, f, indent=4)
 
         except FileNotFoundError:
@@ -76,8 +82,10 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         deleted_count, _ = Technique.objects.filter(category=category_instance).delete()
 
         # Update the JSON file with the modified data
+        json_file_path = os.path.join(settings.BASE_DIR, 'techniques.json')
+
         try:
-            with open('techniques.json', 'r') as f:
+            with open(json_file_path, 'r') as f:
                 data = json.load(f)
 
             categories = data.get('categories', [])
@@ -90,7 +98,7 @@ class TechniqueViewSet(viewsets.ModelViewSet):
                 category['moves'] = []
 
                 # Update the JSON file with the modified data
-                with open('techniques.json', 'w') as f:
+                with open(json_file_path, 'w') as f:
                     json.dump(data, f, indent=4)
 
         except FileNotFoundError:

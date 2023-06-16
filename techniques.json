@@ -72,6 +72,11 @@
                     "name": "Flying Roundhouse Kick",
                     "description": "Highly acrobatic kick technique where the practitioner jumps and executes a roundhouse kick in mid-air",
                     "img": "https://example.com/flying-roundhouse-kick.gif"
+                },
+                {
+                    "name": "Flying Spinning Back Kick",
+                    "description": "An advanced kick technique where the practitioner jumps and executes a spinning back kick in mid-air",
+                    "img": "https://example.com/flying-spinning-back-kick.gif"
                 }
             ]
         },
