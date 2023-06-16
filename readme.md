@@ -17,11 +17,11 @@
 
 | Route  |  HTTP Method | DB Action  | Description  |
 |---|---|---|---|
-| /categories | GET  | INDEX  | Indexes all the demons |
-| /techniques  | POST | CREATE  | Create a list of demons |
-| /categories/:name  | GET  | SHOW  | Show a single demon |
-| /categories/:name | PUT  | UPDATE  | Update a demon from your list  |
-| /categories/:name  | DELETE  | DELETE  | Delete a demon off your list |
+| /categories | GET  | INDEX  | Indexes all techniques |
+| /techniques  | POST | CREATE  | Create a technique |
+| /categories/:name  | GET  | SHOW  | Show a single technique |
+| /categories/:name | PUT  | UPDATE  | Update a technique from your categories |
+| /categories/:name  | DELETE  | DELETE  | Delete a technique off your categories |
 
 
 - **MVP**: Just implement the CRUD onto my Muay Thai Backend API. I want to make sure it's being deployed correctly, and all the data sets appear on Vercel as well as have my database appear on PostgreSQL.
