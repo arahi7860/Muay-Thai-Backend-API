@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from django.db.models import ProtectedError
 from .update_drill import update_drills_with_ids
 from django.conf import settings
+from django.db import transaction
 
 class TechniqueViewSet(viewsets.ModelViewSet):
     queryset = Technique.objects.all()
@@ -18,12 +19,9 @@ class TechniqueViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         technique_data = request.data
 
-        # Print the technique_data variable to inspect its contents
-        print("technique_data:", technique_data)
-
         category_name = technique_data.get('category')
 
-        # Check if the category already exists
+        # Check if the category already exists or create it
         category, created = Category.objects.get_or_create(name=category_name)
 
         move_data = {
@@ -41,31 +39,30 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         technique_instance = serializer.save()
 
         # Update the JSON file with the new technique data
-        json_file_path = os.path.join(settings.BASE_DIR, 'techniques.json')
+        with transaction.atomic():
+            try:
+                with open('techniques.json', 'r') as f:
+                    data = json.load(f)
 
-        try:
-            with open(json_file_path, 'r') as f:
-                data = json.load(f)
+                categories = data.get('categories', [])
 
-            categories = data.get('categories', [])
+                # Find the category with the specified name
+                category = next((c for c in categories if c['name'] == category_name), None)
 
-            # Find the category with the specified name
-            category = next((c for c in categories if c['name'] == category_name), None)
+                if category:
+                    # Add the new technique to the category's moves
+                    category['moves'].append({
+                        'name': technique_instance.name,
+                        'description': technique_instance.description,
+                        'img': technique_instance.img
+                    })
 
-            if category:
-                # Add the new technique to the category's moves
-                category['moves'].append({
-                    'name': technique_instance.name,
-                    'description': technique_instance.description,
-                    'img': technique_instance.img
-                })
+                    # Update the JSON file with the modified data
+                    with open('techniques.json', 'w') as f:
+                        json.dump(data, f, indent=4)
 
-                # Update the JSON file with the modified data
-                with open(json_file_path, 'w') as f:
-                    json.dump(data, f, indent=4)
-
-        except FileNotFoundError:
-            return Response({'message': 'Data file not found.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            except FileNotFoundError:
+                return Response({'message': 'Data file not found.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
 
