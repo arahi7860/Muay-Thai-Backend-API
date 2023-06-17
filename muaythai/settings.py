@@ -50,16 +50,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'muaythai.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'muaythai_db',
-        'USER': 'muaythai_admin',
-        'PASSWORD': 'mypassword',
-        'HOST': 'containers-us-west-45.railway.app',
-        'PORT': '6486',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'muaythai_db',
+#         'USER': 'muaythai_admin',
+#         'PASSWORD': 'mypassword',
+#         'HOST': 'containers-us-west-45.railway.app',
+#         'PORT': '6486',
+#     }
+# }
 
 
 # Database

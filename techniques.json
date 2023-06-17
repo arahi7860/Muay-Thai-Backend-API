@@ -127,6 +127,11 @@
                     "name": "Khao Thip",
                     "description": "Muay Thai Push Knee Strike",
                     "img": "https://thumbs.gfycat.com/WelllitWigglyEstuarinecrocodile-max-1mb.gif"
+                },
+                {
+                    "name": "Clinch Knee",
+                    "description": "A close-quarters Muay Thai technique where the practitioner grabs the opponent's neck or head and delivers knee strikes.",
+                    "img": "https://example.com/clinch-knee.png"
                 }
             ]
         },
