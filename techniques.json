@@ -77,6 +77,11 @@
                     "name": "Flying Spinning Back Kick",
                     "description": "An advanced kick technique where the practitioner jumps and executes a spinning back kick in mid-air",
                     "img": "https://example.com/flying-spinning-back-kick.gif"
+                },
+                {
+                    "name": "Te Khang",
+                    "description": "Upward Foot Thrust",
+                    "img": "https://example.com/te-khang.gif"
                 }
             ]
         },
