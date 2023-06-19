@@ -102,6 +102,18 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
         return Response({'message': f'{deleted_count} technique(s) deleted successfully.'}, status=status.HTTP_200_OK)
 
+    def create_technique(self, request):
+        data = request.data
+
+        name = data.get('name')
+        description = data.get('description')
+        img = data.get('img')
+        category_name = data.get('category')
+
+        # Perform further processing or validation as needed
+
+        return Response
+
 
 class TrainingDrillViewSet(viewsets.ModelViewSet):
     queryset = TrainingDrill.objects.all()
