@@ -50,6 +50,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'muaythai.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'muaythai_db',
+        'USER': 'muaythai_admin',
+        'PASSWORD': 'mypassword',
+        'HOST': 'dpg-ci7u1fenqql0lde131b0-a.oregon-postgres.render.com',
+        'PORT': '5432',
+    }
+}
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
