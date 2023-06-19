@@ -30,12 +30,14 @@ class TechniqueViewSet(viewsets.ModelViewSet):
             'name': technique_data.get('name'),
             'description': technique_data.get('description'),
             'img': technique_data.get('img'),
-            'category': category.id
+            'categories': [category.id]  # Use 'categories' instead of 'category'
         }
 
         # Create a serializer instance with the move data
         serializer = self.get_serializer(data=move_data)
-        serializer.is_valid(raise_exception=True)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         # Save the technique instance
         technique_instance = serializer.save()
@@ -66,6 +68,7 @@ class TechniqueViewSet(viewsets.ModelViewSet):
             return Response({'message': 'Data file not found.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
+
 
     def clear_techniques(self, request):
         category_name = request.data.get('category')
