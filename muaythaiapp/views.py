@@ -11,7 +11,7 @@ from django.db.models import ProtectedError
 from .update_drill import update_drills_with_ids
 from django.conf import settings
 
-class TechniqueViewSet(ModelViewSet):
+class TechniqueViewSet(viewsets.ModelViewSet):
     queryset = Technique.objects.all()
     serializer_class = TechniqueSerializer
 
@@ -30,7 +30,7 @@ class TechniqueViewSet(ModelViewSet):
             'name': technique_data.get('name'),
             'description': technique_data.get('description'),
             'img': technique_data.get('img'),
-            'categories': [category.id]
+            'category': category.id
         }
 
         # Create a serializer instance with the move data
@@ -77,7 +77,7 @@ class TechniqueViewSet(ModelViewSet):
             return Response({'message': f'Category "{category_name}" does not exist.'}, status=status.HTTP_404_NOT_FOUND)
 
         # Delete the techniques belonging to the category
-        deleted_count, _ = Technique.objects.filter(categories=category_instance).delete()
+        deleted_count, _ = Technique.objects.filter(category=category_instance).delete()
 
         # Update the JSON file with the modified data
         try:
@@ -102,30 +102,6 @@ class TechniqueViewSet(ModelViewSet):
 
         return Response({'message': f'{deleted_count} technique(s) deleted successfully.'}, status=status.HTTP_200_OK)
 
-    def create_technique(self, request):
-        # Handle the request and return the response
-        if request.method == 'POST':
-            data = json.loads(request.body)
-            name = data.get('name')
-            description = data.get('description')
-            img = data.get('img')
-            category_name = data.get('category')
-
-            # Check if the category already exists
-            category, created = Category.objects.get_or_create(name=category_name)
-
-            # Create the technique instance
-            technique = Technique(name=name, description=description, img=img)
-            technique.save()
-
-            # Add the category to the technique
-            technique.categories.add(category)
-
-            return JsonResponse({'message': 'Technique created successfully.'})
-        else:
-            return JsonResponse({'message': 'Invalid request method.'})
-
-    
 
 class TrainingDrillViewSet(viewsets.ModelViewSet):
     queryset = TrainingDrill.objects.all()
