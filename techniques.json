@@ -182,6 +182,11 @@
                     "name": "Spinning Back Fist",
                     "description": "A striking technique where the practitioner rotates the body and delivers a powerful back fist strike.",
                     "img": "https://example.com/spinning-back-fist.png"
+                },
+                {
+                    "name": "Jab",
+                    "description": "A quick, straight punch thrown with the lead hand.",
+                    "img": "https://example.com/jab.gif"
                 }
             ]
         },

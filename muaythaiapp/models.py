@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Technique(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    name = models.CharField(max_length=100, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     img = models.URLField(null=True, blank=True)
     categories = models.ManyToManyField('Category', related_name='related_techniques')
 
