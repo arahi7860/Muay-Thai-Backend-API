@@ -4,8 +4,7 @@ from .models import Technique, TrainingDrill, Category
 class TechniqueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Technique
-        fields = ['name', 'description', 'img', 'categories']
-
+        fields = ['name', 'description', 'img']
 
 class TrainingDrillSerializer(serializers.ModelSerializer):
     techniques = TechniqueSerializer(many=True)
