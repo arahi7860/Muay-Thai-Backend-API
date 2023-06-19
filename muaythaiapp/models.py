@@ -15,10 +15,7 @@ class TrainingDrill(models.Model):
     parent_drill = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='sub_drills')
 
     def __str__(self):
-        if self.name:
-            return self.name
-        return f"TrainingDrill object (id={self.id})"
-
+        return self.name
 
     class Meta:
         ordering = ['sequence']
@@ -28,4 +25,4 @@ class Category(models.Model):
     techniques = models.ManyToManyField('Technique', related_name='related_categories')
 
     def __str__(self):
-        return self.name
+        return self.name or ''
