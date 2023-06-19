@@ -106,16 +106,60 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         return Response({'message': f'{deleted_count} technique(s) deleted successfully.'}, status=status.HTTP_200_OK)
 
     def create_technique(self, request):
-        data = request.data
+        technique_data = request.data
 
-        name = data.get('name')
-        description = data.get('description')
-        img = data.get('img')
-        category_name = data.get('category')
+        category_name = technique_data.get('category')
 
-        # Perform further processing or validation as needed
+        # Check if the category already exists
+        category, created = Category.objects.get_or_create(name=category_name)
 
-        return Response
+        move_data = {
+            'name': technique_data.get('name'),
+            'description': technique_data.get('description'),
+            'img': technique_data.get('img'),
+            'categories': [category.id]
+        }
+
+        # Create a serializer instance with the move data
+        serializer = self.get_serializer(data=move_data)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # Save the technique instance
+        technique_instance = serializer.save()
+
+        # Update the JSON file with the new technique data
+        try:
+            with open('techniques.json', 'r') as f:
+                data = json.load(f)
+
+            categories = data.get('categories', [])
+
+            # Find the category with the specified name
+            category = next((c for c in categories if c['name'] == category_name), None)
+
+            if category:
+                # Add the new technique to the category's moves
+                category['moves'].append({
+                    'name': technique_instance.name,
+                    'description': technique_instance.description,
+                    'img': technique_instance.img
+                })
+
+                # Update the JSON file with the modified data
+                with open('techniques.json', 'w') as f:
+                    json.dump(data, f, indent=4)
+
+        except FileNotFoundError:
+            return Response({'message': 'Data file not found.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Update the category's moves in the CategoryViewSet
+        category_viewset = CategoryViewSet()
+        category_viewset.queryset = Category.objects.all()  # Set the queryset to retrieve all categories
+        category_viewset.update_category_moves(category_name, technique_instance)
+
+        return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
 
 
 class TrainingDrillViewSet(viewsets.ModelViewSet):
@@ -177,3 +221,8 @@ class CategoryViewSet(viewsets.ViewSet):
             return Response(serializer.data)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        
+    def update_category_moves(self, category_name, technique_instance):
+        category = Category.objects.filter(name=category_name).first()
+        if category:
+            category.moves.add(technique_instance)
