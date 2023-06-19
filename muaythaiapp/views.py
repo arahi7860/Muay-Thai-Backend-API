@@ -198,7 +198,6 @@ class TrainingDrillViewSet(viewsets.ModelViewSet):
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
 class CategoryViewSet(viewsets.ViewSet):
     serializer_class = CategorySerializer
 
