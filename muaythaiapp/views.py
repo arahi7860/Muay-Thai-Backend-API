@@ -226,3 +226,5 @@ class CategoryViewSet(viewsets.ViewSet):
         category = Category.objects.filter(name=category_name).first()
         if category:
             category.moves.add(technique_instance)
+
+
