@@ -15,7 +15,10 @@ class TrainingDrill(models.Model):
     parent_drill = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='sub_drills')
 
     def __str__(self):
-        return self.name
+        if self.name:
+            return self.name
+        return f"TrainingDrill object (id={self.id})"
+
 
     class Meta:
         ordering = ['sequence']
