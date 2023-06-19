@@ -2,9 +2,12 @@ from rest_framework import serializers
 from .models import Technique, TrainingDrill, Category
 
 class TechniqueSerializer(serializers.ModelSerializer):
+    categories = serializers.PrimaryKeyRelatedField(many=True, queryset=Category.objects.all())
+
     class Meta:
         model = Technique
-        fields = ['name', 'description', 'img', 'category']
+        fields = ['name', 'description', 'img', 'categories']
+
 
 class TrainingDrillSerializer(serializers.ModelSerializer):
     techniques = TechniqueSerializer(many=True)
