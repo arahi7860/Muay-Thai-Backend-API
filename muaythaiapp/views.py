@@ -30,11 +30,11 @@ class TechniqueViewSet(viewsets.ModelViewSet):
             'name': technique_data.get('name'),
             'description': technique_data.get('description'),
             'img': technique_data.get('img'),
-            'categories': [category.id]  # Use 'categories' instead of 'category'
+            'category': category.id  # Use 'category' instead of 'categories'
         }
 
         # Create a serializer instance with the move data
-        serializer = self.get_serializer(data=move_data)
+        serializer = self.get_serializer(data=request.data)
 
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
