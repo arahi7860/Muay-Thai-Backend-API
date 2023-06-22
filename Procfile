@@ -1,1 +1,1 @@
-web: gunicorn muaythai.wsgi --log-file -
+web: gunicorn 'muaythai.wsgi' --log-file -

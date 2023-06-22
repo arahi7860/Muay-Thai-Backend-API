@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-%%s3@elt%hj=-oj^hteyv61mnik14za_i!nmwle0=8%2&s-s@d
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOST = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

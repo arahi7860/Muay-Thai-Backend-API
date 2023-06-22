@@ -187,6 +187,11 @@
                     "name": "Jab",
                     "description": "A quick, straight punch thrown with the lead hand.",
                     "img": "https://example.com/jab.gif"
+                },
+                {
+                    "name": "Cross",
+                    "description": "A powerful punch thrown with the rear hand, traveling straight towards the opponent.",
+                    "img": "https://example.com/cross.gif"
                 }
             ]
         },
