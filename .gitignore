@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.egg_info/
+*.egg
+*.log
+*.sqlite3
+media/
+staticfiles/
+*.pyd
+*.so
+*.dll
