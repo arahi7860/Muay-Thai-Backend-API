@@ -2,12 +2,14 @@ import os
 from pathlib import Path
 import dotenv
 
+# Load environment variables from .env file
 dotenv.load_dotenv()
 
-
+# Define base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-%%s3@elt%hj=-oj^hteyv61mnik14za_i!nmwle0=8%2&s-s@d'
+# Set SECRET_KEY from environment variable
+SECRET_KEY = os.getenv("SECRET_KEY", 'django-insecure-%%s3@elt%hj=-oj^hteyv61mnik14za_i!nmwle0=8%2&s-s@d')
 
 DEBUG = True
 
@@ -57,14 +59,13 @@ WSGI_APPLICATION = 'muaythai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'muaythai_db',
-        'USER': 'muaythai_admin',
-        'PASSWORD': 'mypassword',
-        'HOST': 'dpg-ci7u1fenqql0lde131b0-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'NAME': os.getenv('DB_NAME', 'muaythai_db'),
+        'USER': os.getenv('DB_USER', 'muaythai_admin'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'mypassword'),
+        'HOST': os.getenv('DB_HOST', 'dpg-ci7u1fenqql0lde131b0-a.oregon-postgres.render.com'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
-
 
 # DATABASES = {
 #     'default': {
