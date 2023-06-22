@@ -192,6 +192,11 @@
                     "name": "Cross",
                     "description": "A powerful punch thrown with the rear hand, traveling straight towards the opponent.",
                     "img": "https://example.com/cross.gif"
+                },
+                {
+                    "name": "Slap",
+                    "description": "A simple slap.",
+                    "img": "https://example.com/slap.gif"
                 }
             ]
         },
