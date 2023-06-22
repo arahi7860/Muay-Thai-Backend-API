@@ -197,6 +197,11 @@
                     "name": "Slap",
                     "description": "A simple slap.",
                     "img": "https://example.com/slap.gif"
+                },
+                {
+                    "name": "Twister",
+                    "description": "A twisting punch.",
+                    "img": "https://example.com/twister.gif"
                 }
             ]
         },
