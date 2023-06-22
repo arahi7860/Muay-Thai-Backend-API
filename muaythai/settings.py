@@ -59,13 +59,25 @@ WSGI_APPLICATION = 'muaythai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'muaythai_db'),
-        'USER': os.getenv('DB_USER', 'muaythai_admin'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'mypassword'),
-        'HOST': os.getenv('DB_HOST', 'dpg-ci7u1fenqql0lde131b0-a.oregon-postgres.render.com'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': 'muaythai_db',
+        'USER': 'muaythai_admin',
+        'PASSWORD': 'mypassword',
+        'HOST': 'containers-us-west-142.railway.app',
+        'PORT': '6708',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME', 'muaythai_db'),
+#         'USER': os.getenv('DB_USER', 'muaythai_admin'),
+#         'PASSWORD': os.getenv('DB_PASSWORD', 'mypassword'),
+#         'HOST': os.getenv('DB_HOST', 'dpg-ci7u1fenqql0lde131b0-a.oregon-postgres.render.com'),
+#         'PORT': os.getenv('DB_PORT', '5432'),
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
