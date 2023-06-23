@@ -21,7 +21,7 @@ class TrainingDrill(models.Model):
         ordering = ['sequence']
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, null=True)
     techniques = models.ManyToManyField('Technique', related_name='related_categories')
 
     def __str__(self):
