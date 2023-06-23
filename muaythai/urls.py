@@ -17,14 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from muaythaiapp.views import TechniqueViewSet, TrainingDrillViewSet, CategoryViewSet
+from muaythaiapp.views import TechniqueViewSet, TrainingDrillViewSet
 
 router = routers.DefaultRouter()
 router.register('techniques', TechniqueViewSet)
 router.register('training-drills', TrainingDrillViewSet)
-router.register(r'categories', CategoryViewSet, basename='category')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
 ]
+

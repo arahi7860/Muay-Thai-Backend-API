@@ -1,7 +1,7 @@
 {
     "categories": [
         {
-            "name": "Kicks",
+            "category": "Kicks",
             "moves": [
                 {
                     "name": "Kradot Te",
@@ -86,7 +86,7 @@
             ]
         },
         {
-            "name": "Knee Strikes",
+            "category": "Knee Strikes",
             "moves": [
                 {
                     "name": "Khao Chiang",
@@ -141,7 +141,7 @@
             ]
         },
         {
-            "name": "Punches",
+            "category": "Punches",
             "moves": [
                 {
                     "name": "Kradot Chok",
@@ -206,7 +206,7 @@
             ]
         },
         {
-            "name": "Elbow Strikes",
+            "category": "Elbow Strikes",
             "moves": [
                 {
                     "name": "Sok Klap",

@@ -1,11 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 class Technique(models.Model):
     name = models.CharField(max_length=100, default='Untitled')
     description = models.TextField(default='No description provided')
     img = models.URLField(null=True, blank=True)
-    categories = models.ManyToManyField('Category', related_name='related_techniques')
+    categories = models.ManyToManyField('self', symmetrical=False, blank=True)
+
+    def __str__(self):
+        return self.name
 
 class TrainingDrill(models.Model):
     name = models.CharField(max_length=100)
@@ -19,10 +21,3 @@ class TrainingDrill(models.Model):
 
     class Meta:
         ordering = ['sequence']
-
-class Category(models.Model):
-    name = models.CharField(max_length=100, null=True)
-    techniques = models.ManyToManyField('Technique', related_name='related_categories')
-
-    def __str__(self):
-        return self.name or ''

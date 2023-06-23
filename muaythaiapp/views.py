@@ -1,8 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets, status
-from .models import Technique, TrainingDrill, Category
-from .serializers import TechniqueSerializer, TrainingDrillSerializer, CategorySerializer
-import json
+from .models import Technique, TrainingDrill
+from .serializers import TechniqueSerializer, TrainingDrillSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.http import JsonResponse
@@ -22,14 +21,10 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
         category_name = technique_data.get('category')
 
-        # Check if the category already exists
-        category, created = Category.objects.get_or_create(name=category_name)
-
         move_data = {
             'name': technique_data.get('name'),
             'description': technique_data.get('description'),
             'img': technique_data.get('img'),
-            'category': category.id
         }
 
         # Create a serializer instance with the move data
@@ -41,12 +36,12 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         # Save the technique instance
         technique_instance = serializer.save()
 
-        # Update the category's moves in the CategoryViewSet
-        category_viewset = CategoryViewSet()
-        category_viewset.queryset = Category.objects.all()  # Set the queryset to retrieve all categories
-        category_viewset.update_category_moves(category_name, technique_instance)
+        # Update the category field of the technique instance
+        technique_instance.category = category_name
+        technique_instance.save()
 
         return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
+
 
 
 class TrainingDrillViewSet(viewsets.ModelViewSet):
@@ -85,20 +80,20 @@ class TrainingDrillViewSet(viewsets.ModelViewSet):
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class CategoryViewSet(viewsets.ViewSet):
-    serializer_class = CategorySerializer
+# class CategoryViewSet(viewsets.ViewSet):
+#     serializer_class = CategorySerializer
 
-    def list(self, request):
-        categories = Category.objects.all()
-        serializer = self.serializer_class(categories, many=True, context={'include_techniques': True})
-        return Response(serializer.data)
+#     def list(self, request):
+#         categories = Category.objects.all()
+#         serializer = self.serializer_class(categories, many=True, context={'include_techniques': True})
+#         return Response(serializer.data)
 
-    def retrieve(self, request, pk=None):
-        category = get_object_or_404(Category, name=pk)
-        serializer = self.serializer_class(category, context={'include_techniques': True})
-        return Response(serializer.data)
+#     def retrieve(self, request, pk=None):
+#         category = get_object_or_404(Category, name=pk)
+#         serializer = self.serializer_class(category, context={'include_techniques': True})
+#         return Response(serializer.data)
 
-    def update_category_moves(self, category_name, technique_instance):
-        category = Category.objects.filter(name=category_name).first()
-        if category:
-            category.related_techniques.add(technique_instance)
+#     def update_category_moves(self, category_name, technique_instance):
+#         category = Category.objects.filter(name=category_name).first()
+#         if category:
+#             category.related_techniques.add(technique_instance)

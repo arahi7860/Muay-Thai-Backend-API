@@ -1,8 +1,18 @@
+import os
 import json
 import psycopg2
+
+# Set the Django settings module
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "muaythai.settings")
+
+# Import the Django settings module
+import django
+django.setup()
+
+# Now you can import the settings
 from django.conf import settings
 
-# Connection details from Django settings
+# Database settings from Django settings
 database_settings = settings.DATABASES['default']
 host = database_settings['HOST']
 port = database_settings['PORT']
@@ -11,7 +21,7 @@ user = database_settings['USER']
 password = database_settings['PASSWORD']
 
 # Read the JSON file
-with open('techniques.json') as json_file:
+with open('./techniques.json') as json_file:
     data = json.load(json_file)
 
 # Connect to the PostgreSQL database
@@ -26,19 +36,17 @@ conn = psycopg2.connect(
 # Create a cursor
 cur = conn.cursor()
 
-# Iterate through the JSON data and insert into the table
+# Insert records into the database
 for category in data['categories']:
-    category_name = category['name']
-    moves = category['moves']
-    for move in moves:
-        move_name = move['name']
+    for move in category['moves']:
+        name = move['name']
         description = move['description']
-        image_url = move['img']
+        img = move['img']
+        category_name = category['category']
 
-        # Execute the SQL statement to insert data
         cur.execute(
-            "INSERT INTO your_table (category_name, move_name, description, image_url) VALUES (%s, %s, %s, %s)",
-            (category_name, move_name, description, image_url)
+            "INSERT INTO muaythaiapp_category (name, description, img, category) VALUES (%s, %s, %s, %s)",
+            (name, description, img, category_name)
         )
 
 # Commit the transaction and close the cursor

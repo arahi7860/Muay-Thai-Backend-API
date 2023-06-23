@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Technique, TrainingDrill, Category
+from .models import Technique, TrainingDrill
 
 class TechniqueSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,13 +23,13 @@ class TrainingDrillSerializer(serializers.ModelSerializer):
 
         return training_drill
 
-class CategorySerializer(serializers.Serializer):
-    name = serializers.CharField()
-    moves = serializers.SerializerMethodField()
+# class CategorySerializer(serializers.Serializer):
+#     name = serializers.CharField()
+#     moves = serializers.SerializerMethodField()
 
-    def get_moves(self, category):
-        include_techniques = self.context.get('include_techniques', False)
-        if include_techniques:
-            return category.get('moves', [])
-        else:
-            return []
+#     def get_moves(self, category):
+#         include_techniques = self.context.get('include_techniques', False)
+#         if include_techniques:
+#             return category.get('moves', [])
+#         else:
+#             return []
