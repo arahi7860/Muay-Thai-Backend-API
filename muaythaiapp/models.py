@@ -4,7 +4,7 @@ class Technique(models.Model):
     name = models.CharField(max_length=100, default='Untitled')
     description = models.TextField(default='No description provided')
     img = models.URLField(null=True, blank=True)
-    categories = models.ManyToManyField('self', symmetrical=False, blank=True)
+    category = models.CharField(max_length=100, default='Default Category')
 
     def __str__(self):
         return self.name

@@ -1,244 +1,267 @@
 {
-    "categories": [
-        {
-            "category": "Kicks",
-            "moves": [
-                {
-                    "name": "Kradot Te",
-                    "description": "Jump Kick",
-                    "img": "https://dojomart.com/wp-content/uploads/2022/01/Jump-Kick-1.gif"
-                },
-                {
-                    "name": "Kradot Thip",
-                    "description": "Jumping Push Kick or Foot Thrust",
-                    "img": "https://i.imgur.com/d3iXK6t.gif"
-                },
-                {
-                    "name": "Te Chiang",
-                    "description": "Diagonal Kick",
-                    "img": "https://dojomart.com/wp-content/uploads/2022/01/Diagonal-Kick.gif"
-                },
-                {
-                    "name": "Te Khao",
-                    "description": "Axe Kick",
-                    "img": "https://dojomart.com/wp-content/uploads/2022/01/Axe-Kick.gif"
-                },
-                {
-                    "name": "Te Klap Lang",
-                    "description": "Reverse Roundhouse Kick",
-                    "img": "https://imgur.com/CLsTA.gif"
-                },
-                {
-                    "name": "Te Kot",
-                    "description": "Downward Roundhouse Kick",
-                    "img": "https://makeagif.com/gif/downward-roundhouse-kick-j-PgOw.gif"
-                },
-                {
-                    "name": "Te Tat",
-                    "description": "Muay Thai Roundhouse Kick",
-                    "img": "https://i.pinimg.com/originals/8a/7e/67/8a7e67e5536f4888210fc7700f8dab2d.gif"
-                },
-                {
-                    "name": "Te Trong",
-                    "description": "Front Kick or Straight Kick",
-                    "img": "https://i.imgur.com/ycXAOfR.gif"
-                },
-                {
-                    "name": "Thip Khang",
-                    "description": "Side Foot Thrust",
-                    "img": "https://thumbs.gfycat.com/EarlyElatedArkshell-max-1mb.gif"
-                },
-                {
-                    "name": "Thip Klap Lang",
-                    "description": "Reverse Foot Thrust",
-                    "img": "https://media.tenor.com/woPtx1Ym5o8AAAAC/spinning-back-kick-missed.gif"
-                },
-                {
-                    "name": "Thip Top",
-                    "description": "Slapping Foot Jab or Thrust",
-                    "img": "https://example.com/thip-top.gif"
-                },
-                {
-                    "name": "Thip Trong",
-                    "description": "Straight Foot Jab or Thrust",
-                    "img": "https://64.media.tumblr.com/f449b4726a67ca99e261d4903e1e4148/tumblr_nkd2lpd0Uz1ry1rm7o3_r1_400.gif"
-                },
-                {
-                    "name": "Spinning Hook Kick",
-                    "description": "A powerful kick where the practitioner spins and strikes with the heel or instep of the foot in a horizontal arc",
-                    "img": "https://example.com/spinning-hook-kick.gif"
-                },
-                {
-                    "name": "Flying Roundhouse Kick",
-                    "description": "Highly acrobatic kick technique where the practitioner jumps and executes a roundhouse kick in mid-air",
-                    "img": "https://example.com/flying-roundhouse-kick.gif"
-                },
-                {
-                    "name": "Flying Spinning Back Kick",
-                    "description": "An advanced kick technique where the practitioner jumps and executes a spinning back kick in mid-air",
-                    "img": "https://example.com/flying-spinning-back-kick.gif"
-                },
-                {
-                    "name": "Te Khang",
-                    "description": "Upward Foot Thrust",
-                    "img": "https://example.com/te-khang.gif"
-                }
-            ]
-        },
-        {
-            "category": "Knee Strikes",
-            "moves": [
-                {
-                    "name": "Khao Chiang",
-                    "description": "Muay Thai Diagonal Knee Strike",
-                    "img": "https://thumbs.gfycat.com/VastGlaringGalapagoshawk-max-1mb.gif"
-                },
-                {
-                    "name": "Khao Khong",
-                    "description": "Muay Thai Curving Knee Strike",
-                    "img": "https://thumbs.gfycat.com/AlarmedTotalHamadryasmax"
-                },
-                {
-                    "name": "Khao Lod",
-                    "description": "Straight Knee Strike",
-                    "img": "https://i.gifer.com/ZCZq.gif"
-                },
-                {
-                    "name": "Khao Loy",
-                    "description": "Jumping Knee Strike",
-                    "img": "https://thumbs.gfycat.com/ScaryPoliteBasilisk-size_restricted.gif"
-                },
-                {
-                    "name": "Khao Loi",
-                    "description": "Flying Knee Strike",
-                    "img": "https://media2.giphy.com/media/BY3XkDEyVN1iA/giphy.gif"
-                },
-                {
-                    "name": "Khao Rop",
-                    "description": "Knee Strike to the Body",
-                    "img": "https://thumbs.gfycat.com/MindlessTastyDeviltasmanian-max-1mb.gif"
-                },
-                {
-                    "name": "Khao Sao",
-                    "description": "Knee Strike to the Thigh",
-                    "img": "https://i.gifer.com/1QWC.gif"
-                },
-                {
-                    "name": "Khao Tat",
-                    "description": "Muay Thai Round Knee Strike",
-                    "img": "https://thumbs.gfycat.com/DisloyalWeakElectriceel-max-1mb.gif"
-                },
-                {
-                    "name": "Khao Thip",
-                    "description": "Muay Thai Push Knee Strike",
-                    "img": "https://thumbs.gfycat.com/WelllitWigglyEstuarinecrocodile-max-1mb.gif"
-                },
-                {
-                    "name": "Clinch Knee",
-                    "description": "A close-quarters Muay Thai technique where the practitioner grabs the opponent's neck or head and delivers knee strikes.",
-                    "img": "https://example.com/clinch-knee.png"
-                }
-            ]
-        },
-        {
-            "category": "Punches",
-            "moves": [
-                {
-                    "name": "Kradot Chok",
-                    "description": "Superman Punch",
-                    "img": "https://media0.giphy.com/media/3oEjIa5kWxTF8NBPY4/giphy.gif"
-                },
-                {
-                    "name": "Mat Nueng",
-                    "description": "Jab",
-                    "img": "https://thumbs.gfycat.com/GaseousAmusingAmericanriverotter-max-1mb.gif"
-                },
-                {
-                    "name": "Mat Soi Dao",
-                    "description": "Uppercut Punch",
-                    "img": "https://thumbs.gfycat.com/ChillyWellgroomedJanenschia-size_restricted.gif"
-                },
-                {
-                    "name": "Mat Trong",
-                    "description": "Straight Punch, Cross Punch, Reverse Punch, etc.",
-                    "img": "https://64.media.tumblr.com/a934bf86d13727550b1270884ca07a22/tumblr_oac5iyQgX11up8ga8o1_540.gif"
-                },
-                {
-                    "name": "Mat Wiang Klap",
-                    "description": "Backfist Strike",
-                    "img": "https://j.gifs.com/mORVgG.gif"
-                },
-                {
-                    "name": "Mat Wiang San",
-                    "description": "Hook Punch",
-                    "img": "https://media.tenor.com/R1zS-nHhpmcAAAAd/right-hook-punch.gif"
-                },
-                {
-                    "name": "Mat Wiang Yao",
-                    "description": "Haymaker Punch",
-                    "img": "https://media.tenor.com/wt702WH7ImQAAAAd/haymaker-big-hit.gif"
-                },
-                {
-                    "name": "Spinning Back Fist",
-                    "description": "A striking technique where the practitioner rotates the body and delivers a powerful back fist strike.",
-                    "img": "https://example.com/spinning-back-fist.png"
-                },
-                {
-                    "name": "Jab",
-                    "description": "A quick, straight punch thrown with the lead hand.",
-                    "img": "https://example.com/jab.gif"
-                },
-                {
-                    "name": "Cross",
-                    "description": "A powerful punch thrown with the rear hand, traveling straight towards the opponent.",
-                    "img": "https://example.com/cross.gif"
-                },
-                {
-                    "name": "Slap",
-                    "description": "A simple slap.",
-                    "img": "https://example.com/slap.gif"
-                },
-                {
-                    "name": "Twister",
-                    "description": "A twisting punch.",
-                    "img": "https://example.com/twister.gif"
-                }
-            ]
-        },
-        {
-            "category": "Elbow Strikes",
-            "moves": [
-                {
-                    "name": "Sok Klap",
-                    "description": "Spinning Elbow Strike",
-                    "img": "https://media0.giphy.com/media/hEaxF5qJU6yYgMEfxu/giphy.gif"
-                },
-                {
-                    "name": "Sok Ngat",
-                    "description": "Uppercut Elbow Strike",
-                    "img": "https://i.makeagif.com/media/7-22-2016/vlxY4k.gif"
-                },
-                {
-                    "name": "Sok Sap",
-                    "description": "Downward Elbow Strike",
-                    "img": "https://media4.giphy.com/media/J6Cyt2sk4TEYo978Ur/giphy.gif?cid=ecf05e47y1596im39sfp9zeuybnmcp4jptl56zl3tyyqjr3s&ep=v1_gifs_search&rid=giphy.gif&ct=g"
-                },
-                {
-                    "name": "Sok Tat",
-                    "description": "Horizontal Elbow Strike",
-                    "img": "https://media.tenor.com/y7-EPHVnucMAAAAd/muay-thai-elbow-boxing.gif"
-                },
-                {
-                    "name": "Sok Chieng",
-                    "description": "Diagonal Elbow",
-                    "img": "https://j.gifs.com/G68wk0.gif"
-                },
-                {
-                    "name": "Sok Hud",
-                    "description": "Levering Elbow",
-                    "img": "https://cdn.asianjournalusa.com/is_elbowing_allowed_in_muay_thai.gif"
-                }
-            ]
-        }
+    "techniques": [
+    {
+        "name": "Kradot Te",
+        "description": "Jump Kick",
+        "img": "https://dojomart.com/wp-content/uploads/2022/01/Jump-Kick-1.gif",
+         "category": "Kicks"
+    },
+    {
+        "name": "Kradot Thip",
+        "description": "Jumping Push Kick or Foot Thrust",
+        "img": "https://i.imgur.com/d3iXK6t.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Chiang",
+        "description": "Diagonal Kick",
+        "img": "https://dojomart.com/wp-content/uploads/2022/01/Diagonal-Kick.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Khao",
+        "description": "Axe Kick",
+        "img": "https://dojomart.com/wp-content/uploads/2022/01/Axe-Kick.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Klap Lang",
+        "description": "Reverse Roundhouse Kick",
+        "img": "https://imgur.com/CLsTA.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Kot",
+        "description": "Downward Roundhouse Kick",
+        "img": "https://makeagif.com/gif/downward-roundhouse-kick-j-PgOw.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Tat",
+        "description": "Muay Thai Roundhouse Kick",
+        "img": "https://i.pinimg.com/originals/8a/7e/67/8a7e67e5536f4888210fc7700f8dab2d.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Trong",
+        "description": "Front Kick or Straight Kick",
+        "img": "https://i.imgur.com/ycXAOfR.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Thip Khang",
+        "description": "Side Foot Thrust",
+        "img": "https://thumbs.gfycat.com/EarlyElatedArkshell-max-1mb.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Thip Klap Lang",
+        "description": "Reverse Foot Thrust",
+        "img": "https://media.tenor.com/woPtx1Ym5o8AAAAC/spinning-back-kick-missed.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Thip Top",
+        "description": "Slapping Foot Jab or Thrust",
+        "img": "https://example.com/thip-top.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Thip Trong",
+        "description": "Straight Foot Jab or Thrust",
+        "img": "https://64.media.tumblr.com/f449b4726a67ca99e261d4903e1e4148/tumblr_nkd2lpd0Uz1ry1rm7o3_r1_400.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Spinning Hook Kick",
+        "description": "A powerful kick where the practitioner spins and strikes with the heel or instep of the foot in a horizontal arc",
+        "img": "https://example.com/spinning-hook-kick.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Flying Roundhouse Kick",
+        "description": "Highly acrobatic kick technique where the practitioner jumps and executes a roundhouse kick in mid-air",
+        "img": "https://example.com/flying-roundhouse-kick.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Flying Spinning Back Kick",
+        "description": "An advanced kick technique where the practitioner jumps and executes a spinning back kick in mid-air",
+        "img": "https://example.com/flying-spinning-back-kick.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Te Khang",
+        "description": "Upward Foot Thrust",
+        "img": "https://example.com/te-khang.gif",
+        "category": "Kicks"
+    },
+    {
+        "name": "Khao Chiang",
+        "description": "Muay Thai Diagonal Knee Strike",
+        "img": "https://thumbs.gfycat.com/VastGlaringGalapagoshawk-max-1mb.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Khong",
+        "description": "Muay Thai Curving Knee Strike",
+        "img": "https://thumbs.gfycat.com/AlarmedTotalHamadryasmax",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Lod",
+        "description": "Straight Knee Strike",
+        "img": "https://i.gifer.com/ZCZq.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Loy",
+        "description": "Jumping Knee Strike",
+        "img": "https://thumbs.gfycat.com/ScaryPoliteBasilisk-size_restricted.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Loi",
+        "description": "Flying Knee Strike",
+        "img": "https://media2.giphy.com/media/BY3XkDEyVN1iA/giphy.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Rop",
+        "description": "Knee Strike to the Body",
+        "img": "https://thumbs.gfycat.com/MindlessTastyDeviltasmanian-max-1mb.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Sao",
+        "description": "Knee Strike to the Thigh",
+        "img": "https://i.gifer.com/1QWC.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Tat",
+        "description": "Muay Thai Round Knee Strike",
+        "img": "https://thumbs.gfycat.com/DisloyalWeakElectriceel-max-1mb.gif",
+        "category": "Knee Strikes"
+    },
+    {
+        "name": "Khao Thip",
+        "description": "Muay Thai Push Knee Strike",
+        "img": "https://thumbs.gfycat.com/WelllitWigglyEstuarinecrocodile-max-1mb.gif",
+        "category": "Knee Strikes"
+    },{
+        "name": "Clinch Knee",
+        "description": "A close-quarters Muay Thai technique where the practitioner grabs the opponent's neck or head and delivers knee strikes.",
+        "img": "https://example.com/clinch-knee.png",
+        "category": "Knee Strikes"
+      },
+      {
+        "name": "Kradot Chok",
+        "description": "Superman Punch",
+        "img": "https://media0.giphy.com/media/3oEjIa5kWxTF8NBPY4/giphy.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Nueng",
+        "description": "Jab",
+        "img": "https://thumbs.gfycat.com/GaseousAmusingAmericanriverotter-max-1mb.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Soi Dao",
+        "description": "Uppercut Punch",
+        "img": "https://thumbs.gfycat.com/ChillyWellgroomedJanenschia-size_restricted.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Trong",
+        "description": "Straight Punch, Cross Punch, Reverse Punch, etc.",
+        "img": "https://64.media.tumblr.com/a934bf86d13727550b1270884ca07a22/tumblr_oac5iyQgX11up8ga8o1_540.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Wiang Klap",
+        "description": "Backfist Strike",
+        "img": "https://j.gifs.com/mORVgG.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Wiang San",
+        "description": "Hook Punch",
+        "img": "https://media.tenor.com/R1zS-nHhpmcAAAAd/right-hook-punch.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Mat Wiang Yao",
+        "description": "Haymaker Punch",
+        "img": "https://media.tenor.com/wt702WH7ImQAAAAd/haymaker-big-hit.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Spinning Back Fist",
+        "description": "A striking technique where the practitioner rotates the body and delivers a powerful back fist strike.",
+        "img": "https://example.com/spinning-back-fist.png",
+        "category": "Punches"
+      },
+      {
+        "name": "Jab",
+        "description": "A quick, straight punch thrown with the lead hand.",
+        "img": "https://example.com/jab.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Cross",
+        "description": "A powerful punch thrown with the rear hand, traveling straight towards the opponent.",
+        "img": "https://example.com/cross.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Slap",
+        "description": "A simple slap.",
+        "img": "https://example.com/slap.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Twister",
+        "description": "A twisting punch.",
+        "img": "https://example.com/twister.gif",
+        "category": "Punches"
+      },
+      {
+        "name": "Sok Klap",
+        "description": "Spinning Elbow Strike",
+        "img": "https://media0.giphy.com/media/hEaxF5qJU6yYgMEfxu/giphy.gif",
+        "category": "Elbow Strikes"
+      },
+      {
+        "name": "Sok Ngat",
+        "description": "Uppercut Elbow Strike",
+        "img": "https://i.makeagif.com/media/7-22-2016/vlxY4k.gif",
+        "category": "Elbow Strikes"
+      },
+      {
+        "name": "Sok Sap",
+        "description": "Downward Elbow Strike",
+        "img": "https://media4.giphy.com/media/J6Cyt2sk4TEYo978Ur/giphy.gif?cid=ecf05e47y1596im39sfp9zeuybnmcp4jptl56zl3tyyqjr3s&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+        "category": "Elbow Strikes"
+      },
+      {
+        "name": "Sok Tat",
+        "description": "Horizontal Elbow Strike",
+        "img": "https://media.tenor.com/y7-EPHVnucMAAAAd/muay-thai-elbow-boxing.gif",
+        "category": "Elbow Strikes"
+      },
+      {
+        "name": "Sok Chieng",
+        "description": "Diagonal Elbow",
+        "img": "https://j.gifs.com/G68wk0.gif",
+        "category": "Elbow Strikes"
+      },
+      {
+        "name": "Sok Hud",
+        "description": "Levering Elbow",
+        "img": "https://cdn.asianjournalusa.com/is_elbowing_allowed_in_muay_thai.gif",
+        "category": "Elbow Strikes"
+      }
     ]
 }
