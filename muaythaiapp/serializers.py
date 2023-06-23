@@ -2,9 +2,12 @@ from rest_framework import serializers
 from .models import Technique, TrainingDrill
 
 class TechniqueSerializer(serializers.ModelSerializer):
+    category = serializers.CharField()  # Update field name to 'category'
+
     class Meta:
         model = Technique
-        fields = ['name', 'description', 'img', 'categories']
+        fields = ['name', 'description', 'img', 'category']
+
 
 
 class TrainingDrillSerializer(serializers.ModelSerializer):
