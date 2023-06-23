@@ -17,6 +17,9 @@ class TechniqueViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         technique_data = request.data
 
+        # Print the technique_data to inspect its contents
+        print(technique_data)
+
         category_name = technique_data.get('category')
 
         # Check if the category already exists
