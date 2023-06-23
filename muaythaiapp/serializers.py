@@ -9,7 +9,6 @@ class TechniqueSerializer(serializers.ModelSerializer):
         fields = ['name', 'description', 'img', 'category']
 
 
-
 class TrainingDrillSerializer(serializers.ModelSerializer):
     techniques = TechniqueSerializer(many=True)
 

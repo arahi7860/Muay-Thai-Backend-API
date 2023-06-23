@@ -25,6 +25,9 @@ class TechniqueViewSet(viewsets.ModelViewSet):
             'category': category_name  # Include category in move_data
         }
 
+        print("Received data:", move_data)  # Print the received data
+
+
         serializer = self.get_serializer(data=move_data)
 
         if not serializer.is_valid():
