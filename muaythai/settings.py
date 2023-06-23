@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import dotenv
+from rest_framework.parsers import JSONParser
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
@@ -154,3 +155,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+}
