@@ -57,6 +57,30 @@ class TechniqueViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         instance.delete()
         return Response({"message": "Technique deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+    
+    @action(detail=False, methods=['post'])
+    def create_technique(self, request):
+        technique_data = request.data
+
+        category_name = technique_data.get('category')
+
+        move_data = {
+            'name': technique_data.get('name'),
+            'description': technique_data.get('description'),
+            'img': technique_data.get('img'),
+            'category': category_name  # Include category in move_data
+        }
+
+        print("Received data:", move_data)  # Print the received data
+
+        serializer = self.get_serializer(data=move_data)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        technique_instance = serializer.save()
+
+        return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
 
 
 
