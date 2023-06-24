@@ -27,7 +27,6 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
         print("Received data:", move_data)  # Print the received data
 
-
         serializer = self.get_serializer(data=move_data)
 
         if not serializer.is_valid():
@@ -35,7 +34,12 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
         technique_instance = serializer.save()
 
-        return Response({"message": "Technique created successfully"}, status=status.HTTP_201_CREATED)
+        # Retrieve the updated data using the serializer
+        updated_data = TechniqueSerializer(technique_instance).data
+
+        # Return the updated data in the response
+        return Response(updated_data, status=status.HTTP_201_CREATED)
+
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
@@ -51,7 +55,12 @@ class TechniqueViewSet(viewsets.ModelViewSet):
 
         technique_instance = serializer.save()
 
-        return Response({"message": "Technique updated successfully"}, status=status.HTTP_200_OK)
+        # Retrieve the updated data using the serializer
+        updated_data = TechniqueSerializer(technique_instance).data
+
+        # Return the updated data in the response
+        return Response(updated_data, status=status.HTTP_200_OK)
+
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
