@@ -8,6 +8,7 @@ pillow = "*"
 python-dotenv = "*"
 prettytable = "*"
 requests = "*"
+whitenoise = "*"
 
 [dev-packages]
 
