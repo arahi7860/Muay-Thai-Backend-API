@@ -8,17 +8,12 @@ from django.http import JsonResponse
 from django.db.models import ProtectedError
 from .update_drill import update_drills_with_ids
 from django.conf import settings
-from rest_framework.parsers import JSONParser
 
 class TechniqueViewSet(viewsets.ModelViewSet):
     queryset = Technique.objects.all()
     serializer_class = TechniqueSerializer
 
     def create(self, request, *args, **kwargs):
-        # Parse the request body as JSON
-        parser_classes = [JSONParser]
-        self.request.parsers = parser_classes
-
         technique_data = request.data
 
         category_name = technique_data.get('category')
