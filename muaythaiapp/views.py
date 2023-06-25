@@ -128,21 +128,3 @@ class TrainingDrillViewSet(viewsets.ModelViewSet):
         update_drills_with_ids(training_drills)
 
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-# class CategoryViewSet(viewsets.ViewSet):
-#     serializer_class = CategorySerializer
-
-#     def list(self, request):
-#         categories = Category.objects.all()
-#         serializer = self.serializer_class(categories, many=True, context={'include_techniques': True})
-#         return Response(serializer.data)
-
-#     def retrieve(self, request, pk=None):
-#         category = get_object_or_404(Category, name=pk)
-#         serializer = self.serializer_class(category, context={'include_techniques': True})
-#         return Response(serializer.data)
-
-#     def update_category_moves(self, category_name, technique_instance):
-#         category = Category.objects.filter(name=category_name).first()
-#         if category:
-#             category.related_techniques.add(technique_instance)
