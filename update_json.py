@@ -1,13 +1,13 @@
 import requests
 
-url = 'https://muay-thai-backend-api-production.up.railway.app/techniques/{id}'
+url = 'https://muay-thai-backend-api-production.up.railway.app/techniques/{id}/'
 headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
 
 # Replace {id} with the actual ID of the technique you want to update
-technique_id = 160
+technique_id = 161
 url = url.format(id=technique_id)
 
 data = {

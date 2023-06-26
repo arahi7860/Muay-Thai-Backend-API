@@ -6,7 +6,7 @@ headers = {
     'Accept': 'application/json'
 }
 data = {
-    "name": "Test Technique 5",
+    "name": "Test Technique 6",
     "description": "I am tired",
     "img": "https://example.com/test.gif",
     "category": "Punches"
