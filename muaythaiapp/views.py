@@ -128,3 +128,5 @@ class TrainingDrillViewSet(viewsets.ModelViewSet):
         update_drills_with_ids(training_drills)
 
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
